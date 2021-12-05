@@ -10,6 +10,6 @@ class JUnit5ExampleTest {
 
     account acc = new  account();
     int result = acc.addition();
-    assertEquals(3,result);
+    assertEquals(4,result);
   }
 }
