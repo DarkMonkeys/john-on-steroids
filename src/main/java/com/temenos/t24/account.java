@@ -14,7 +14,7 @@ public class account {
   public int addition() {
 
     int num1 = 1;
-    int num2 = 1;
+    int num2 = 2;
 
     int result = num1 + num2;
 
