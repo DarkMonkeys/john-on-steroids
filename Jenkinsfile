@@ -1,17 +1,15 @@
-pipeline {
-    agent any
-
-    stages {
-    
-        stage('Maven clean') {
-            steps {
-                sh 'mvn clean'
-            }
-        }
-         stage('Maven install') {
-            steps {
-                sh 'mvn install'
-            }
+node{
+def app
+    stage("Clone"){
+     checkout scm   
+    }
+    stage('Build image') {
+     app = docker.build("darkmonkey/maven")
+    }
+    stage("Test image"){
+        docker.image('').withRun('-p 80:80') { c ->
+            sh 'docker ps'
+            sh 'curl localhost'
         }
     }
 }
