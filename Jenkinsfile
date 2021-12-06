@@ -8,11 +8,9 @@ def app
     }
     stage("Test image"){
       
-      agent{
         docker {
           image 'darkmonkey/maven'
           args '-p 80:80'
-         }
       }
       steps{
         sh 'mvn clean install'
