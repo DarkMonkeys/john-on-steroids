@@ -1,10 +1,19 @@
- pipeline {
-    agent { dockerfile true }
-    stages {
-        stage('Test') {
-            steps {
-                sh 'mvn clean install'
-            }
-        }
+node{
+def app
+    stage("Clone"){
+     checkout scm   
+    }
+    stage('Build image') {
+     app = docker.build("darkmonkey/maven")
+    }
+    stage("Test image"){
+      
+        docker {
+          image 'darkmonkey/maven'
+          args '-p 80:80'
+      }
+      steps{
+        sh 'mvn clean install'
+      }
     }
 }
