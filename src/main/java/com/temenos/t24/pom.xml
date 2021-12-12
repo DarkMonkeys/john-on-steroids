@@ -5,7 +5,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.temenos.t24</groupId>
   <artifactId>ACCOUNT</artifactId>
-  <version>1.1-SNAPSHOT</version>
+  <version>1.0.0-SNAPSHOT</version>
   <dependencies>
     <dependency>
       <groupId>org.junit.jupiter</groupId>
@@ -50,7 +50,7 @@
               <goal>deploy-file</goal>
             </goals>
             <configuration>
-              <file>../../../../../../target/ACCOUNT.jar</file>
+              <file>target/ACCOUNT.jar</file>
               <repositoryId>${project.distributionManagement.snapshotRepository.id}</repositoryId>
               <url>${project.distributionManagement.snapshotRepository.url}</url>
               <groupId>${project.groupId}</groupId>
