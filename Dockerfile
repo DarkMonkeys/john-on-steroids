@@ -1,4 +1,4 @@
 FROM maven
-ADD src /srca
+ADD src /src
 ADD pom.xml /pom.xml
 
